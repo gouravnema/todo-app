@@ -1,0 +1,101 @@
+// out: ../css/style.css
+
+.strike {
+  text-decoration: line-through;
+}
+
+.container{
+  border-radius: 5px;
+  border: 1px solid red;
+  padding: 20px;
+  .list{
+      .list-head{
+        width: 100%;
+        padding: 1px;
+        border-bottom: 1px grey solid;
+        margin: 5px;
+      };
+      .list-new{
+        width:100%;
+        input{
+          width: 100%;
+          border-radius: 5px;
+          padding: 2px;
+        };
+      };
+      .list-task{
+        margin: 1px;
+        box-shadow: 2px;
+        border: 1px solid pink;
+        border-radius: 5px;
+        padding: 2px;
+        min-width: 300px;
+        overflow:hidden;
+        // background: orange;
+        .task-checkbox{
+          width: 5%;
+          display: inline-block;
+          float: left;
+          min-width: 20px;
+        };
+        .task-text{
+          width: 85%;
+          height:inherit;
+          display: inline-block;
+          float: left;
+          min-width: 230px;
+        };
+        .task-delete{
+           width: 10%;
+           height: inherit;
+           min-width: 50px;
+           float: right;
+          display: inline-block;
+          button{
+            width: 100%;
+            background: red;
+            border: none;
+            border-radius: 5px;
+            height: 100%;
+          }
+        };
+      };
+  }
+}
+
+@media only screen
+  and (min-device-width: 320px)
+  and (max-device-width: 480px)
+  and (-webkit-min-device-pixel-ratio: 2) {
+
+    .container{
+      padding: 2 px;
+        .list{
+          .list-new{
+            width:100%;
+            padding: 0px;
+            input{
+              width: 100%;
+              border-radius: 5px;
+              padding: 2px;
+                };
+            };
+          .list-task{
+            width: 100%;
+            min-width: 0px;
+            .task-checkbox{
+              width: 20px;
+            };
+            .task-text{
+              width: 190px;
+              min-width: 0px;
+            };
+            .task-delete{
+               width: 50px;
+               float: right;
+            };
+          };
+      };
+    };
+
+}

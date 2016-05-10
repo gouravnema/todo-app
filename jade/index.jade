@@ -1,0 +1,22 @@
+//output:../index.html
+doctype html
+html(ng-app="todoApp")
+  head
+    meta(name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1")
+    title "simple todo list"
+    link(rel='stylesheet', href='./css/style.css')
+  body(ng-controller="taskListController")
+    .container
+      .list
+        .list-head TODO LIST
+        .list-new
+          input(type="text" ng-keypress="keyPress($event)" ng-model="newTaskText" placeholder="write todo text here and hit enter")
+        .list-task(ng-repeat = "task in tasks")
+          .task-checkbox 
+            input(type="checkbox" ng-model="task.done" ng-click="sync()" )
+          .task-text(ng-class="{strike:task.done}") {{task.text}}
+          .task-delete 
+            button(ng-click="delete(task)") Delete
+      
+      script(src = "./js/angular.min.js")
+      script(src = "./js/todo.js")

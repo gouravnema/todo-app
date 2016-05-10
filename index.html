@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html ng-app="todoApp">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>"simple todo list"</title>
+    <link rel="stylesheet" href="./css/style.css">
+  </head>
+  <body ng-controller="taskListController">
+    <div class="container">
+      <div class="list">
+        <div class="list-head">TODO LIST</div>
+        <div class="list-new">
+          <input type="text" ng-keypress="keyPress($event)" ng-model="newTaskText" placeholder="write todo text here and hit enter">
+        </div>
+        <div ng-repeat="task in tasks" class="list-task">
+          <div class="task-checkbox"> 
+            <input type="checkbox" ng-model="task.done" ng-click="sync()">
+          </div>
+          <div ng-class="{strike:task.done}" class="task-text">{{task.text}}</div>
+          <div class="task-delete"> 
+            <button ng-click="delete(task)">Delete</button>
+          </div>
+        </div>
+      </div>
+      <script src="./js/angular.min.js"></script>
+      <script src="./js/todo.js"></script>
+    </div>
+  </body>
+</html>
